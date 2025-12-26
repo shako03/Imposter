@@ -2,7 +2,7 @@
   --bg1: #0f2027;
   --bg2: #203a43;
   --bg3: #2c5364;
-  --card: rgba(255, 255, 255, 0.12);
+  --card: rgba(255,255,255,0.12);
   --primary: #ff4757;
   --secondary: #1e90ff;
 }
@@ -15,25 +15,21 @@
 
 body {
   min-height: 100vh;
+  font-family: system-ui, sans-serif;
   background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-  font-family: system-ui, -apple-system, sans-serif;
   color: white;
   display: flex;
   flex-direction: column;
 }
 
-/* head */
+/* HEADER */
 .header {
-  width: 100%;
   padding: 14px 24px;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0,0,0,0.35);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 .logo {
@@ -53,12 +49,12 @@ body {
   opacity: 1;
 }
 
-/* .main */
+/* MAIN */
 .main {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 
@@ -67,7 +63,7 @@ body {
   max-width: 420px;
 }
 
-/* carddd */
+/* CARD */
 .card {
   background: var(--card);
   backdrop-filter: blur(12px);
@@ -78,31 +74,18 @@ body {
   margin-bottom: 20px;
 }
 
-.card h1,
-.card h2 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 14px;
-  opacity: 0.9;
+.hidden {
+  display: none;
 }
 
 /* FORM */
-input,
-select,
-button {
+input, select, button {
   width: 100%;
   padding: 14px;
   margin-top: 12px;
   font-size: 16px;
   border-radius: 12px;
   border: none;
-}
-
-input,
-select {
-  background: rgba(255,255,255,0.9);
 }
 
 button {
@@ -120,7 +103,7 @@ button:active {
   transform: scale(0.97);
 }
 
-/* info */
+/* TEXT */
 .role {
   font-size: 22px;
   margin-top: 20px;
@@ -129,7 +112,6 @@ button:active {
 .word {
   font-size: 30px;
   font-weight: bold;
-  margin-top: 10px;
 }
 
 .timer {
@@ -137,22 +119,15 @@ button:active {
   font-size: 18px;
 }
 
-/* foot */
+/* FOOTER */
 .footer {
-  width: 100%;
   padding: 12px;
   text-align: center;
   font-size: 13px;
   background: rgba(0,0,0,0.25);
-  opacity: 0.85;
 }
 
-/* Util */
-.hidden {
-  display: none;
-}
-
-/* resp */
+/* MOBILE */
 @media (max-width: 480px) {
   .menu a {
     margin-left: 10px;

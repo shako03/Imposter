@@ -8,17 +8,14 @@
 </head>
 <body>
 
-
 <header class="header">
   <div class="logo">🕵️ Imposter</div>
   <nav class="menu">
     <a href="#" onclick="goHome()">მთავარი</a>
-    <a href="#" onclick="alert('წესები მალე დაემატება')">წესები</a>
+    <a href="#" onclick="alert('თამაში სადაც ერთი არ იცის სიტყვა')">წესები</a>
     <a href="#" onclick="alert('Imposter Word Game v1.0')">About</a>
   </nav>
 </header>
-
-
 
 <main class="main">
   <div class="container">
@@ -42,7 +39,7 @@
 
     <!-- GAME -->
     <section class="card hidden" id="game">
-      <h2 id="playerTitle">მოთამაშე</h2>
+      <h2 id="playerTitle"></h2>
 
       <div id="hiddenRole">
         <button class="secondary" onclick="reveal()">👁 აჩვენე როლი</button>
@@ -57,10 +54,10 @@
 
     <!-- END -->
     <section class="card hidden" id="end">
-      <h2>🎤 დისკუსიის დრო!</h2>
+      <h2 id="startingPlayerTitle">🎤 დისკუსიის დრო!</h2>
       <p>
         ნამიოკებით აღწერეთ სიტყვა.<br>
-        Imposter შეეცდება გამოიცნოს 👀
+        Imposter ცდილობს მიხვდეს 👀
       </p>
 
       <div class="timer" id="timer">⏱️ 60 წამი</div>
@@ -70,9 +67,8 @@
   </div>
 </main>
 
-
 <footer class="footer">
-  <p>© 2025 Imposter Game • Built with HTML, CSS & JS</p>
+  <p>© 2025 Imposter Game • HTML • CSS • JS</p>
 </footer>
 
 <script src="script.js"></script>

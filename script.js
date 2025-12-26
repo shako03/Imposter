@@ -2,7 +2,6 @@ const data = {
   food: ["პიცა", "ხაჭაპური", "ბურგერი", "შაურმა", "ნაყინი"],
   places: ["სკოლა", "ზღვა", "მთები", "კინო", "აეროპორტი"],
   objects: ["ტელეფონი", "ლეპტოპი", "საათი", "მანქანა", "კლავიატურა"]
-  ///...... სხვები მოვა მალე :DDD
 };
 
 let roles = [];
@@ -10,8 +9,9 @@ let current = 0;
 let secretWord = "";
 let time = 60;
 let interval;
+let startingPlayer = 0;
 
-// dommm
+// DOM
 const setup = document.getElementById("setup");
 const game = document.getElementById("game");
 const end = document.getElementById("end");
@@ -28,10 +28,7 @@ const timer = document.getElementById("timer");
 
 function startGame() {
   const count = Number(playersInput.value);
-  if (count < 3) {
-    alert("მინიმუმ 3 მოთამაშე");
-    return;
-  }
+  if (count < 3) return alert("მინიმუმ 3 მოთამაშე");
 
   roles = Array(count).fill("CREW");
   roles[Math.floor(Math.random() * count)] = "IMPOSTER";
@@ -43,6 +40,9 @@ function startGame() {
       : data[cat];
 
   secretWord = words[Math.floor(Math.random() * words.length)];
+
+  // 🔥 ვინ იწყებს თამაშს
+  startingPlayer = Math.floor(Math.random() * count);
 
   setup.classList.add("hidden");
   game.classList.remove("hidden");
@@ -76,6 +76,9 @@ function next() {
   if (current >= roles.length) {
     game.classList.add("hidden");
     end.classList.remove("hidden");
+
+    document.getElementById("startingPlayerTitle").innerText =
+      "🎤 თამაშს იწყებს: მოთამაშე " + (startingPlayer + 1);
   } else {
     showPlayer();
   }
