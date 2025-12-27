@@ -103,3 +103,4 @@ function startTimer() {
 function goHome() {
   location.reload();
 }
+
